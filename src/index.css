@@ -1,8 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Ubuntu:wght@500&display=swap');
+
 body{
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgb(49, 49, 49);
+  color: rgb(237, 233, 233);
 }
 
 .search-part{
@@ -25,6 +31,11 @@ body{
   font-size: 1rem;
 }
 
+h1{
+  text-align: center;
+  font-size: 2.3rem;
+  color: rgb(205, 201, 201);
+}
 .movies{
   display: flex;
   flex-wrap: wrap;
@@ -32,12 +43,13 @@ body{
 }
 
 .each-movie{
-  border: 1px solid grey;
+  border: 1px solid rgb(83, 82, 82);
   margin: 10px 10px 10px 10px;
   width: 207px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
   height: 470px;
+  font-weight: 200;
 }
 
 .each-movie img{

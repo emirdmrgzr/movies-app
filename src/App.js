@@ -30,6 +30,7 @@ function App() {
 
   return ( 
     <div className="container">
+      <h1>Current Top 20 Movies</h1>
       <div className="search-part">
         <form>
           <input type="text" placeholder="Search by name" onChange={handleNameChange} />
