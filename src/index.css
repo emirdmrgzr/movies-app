@@ -1,17 +1,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Ubuntu:wght@500&display=swap');
 
-body{
+/*body{
   margin: 0;
   padding: 0;
+  display:grid;
   width: 100%;
   min-height: 100vh;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgb(49, 49, 49);
   color: rgb(237, 233, 233);
+  overflow: hidden;
 }
 
+.container{
+  position: relative;
+}
 .search-part{
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -36,6 +42,19 @@ h1{
   font-size: 2.3rem;
   color: rgb(205, 201, 201);
 }
+
+.sort-select{
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  justify-content: end;
+}
+
+.sort-select select{
+  padding: 5px;
+  border-radius: 2px;
+}
+
 .movies{
   display: flex;
   flex-wrap: wrap;
@@ -64,3 +83,99 @@ h1{
   flex-direction: column;
   justify-content: center;   
 }
+*/
+
+body{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "search"
+    "sort"
+    "movies";
+  grid-template-rows: auto auto 1fr;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgb(49, 49, 49);
+  color: rgb(237, 233, 233);
+}
+
+.search-part{
+  grid-area: search; /* grid layout'a göre */
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.search-part input{
+  width: 250px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid lightgray;
+  padding: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  color: rgb(37, 37, 37);
+}
+
+::placeholder{
+  font-size: 1rem;
+}
+
+h1{
+  text-align: center;
+  font-size: 2.3rem;
+  color: rgb(205, 201, 201);
+}
+
+.sort-select{
+  grid-area: sort; /* grid layout'a göre */
+  position: relative;
+  
+}
+
+.sort-select select{
+  position: absolute;
+  width: 130px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 1; /* diğer elementlerden üstte olması için */
+  margin-right: 20px; /* diğer elementlerden aralık vermek için */
+  margin-top: -10px;
+  border-radius: 4px;
+}
+
+.movies{
+  grid-area: movies; /* grid layout'a göre */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.each-movie{
+  border: 1px solid rgb(83, 82, 82);
+  margin: 10px;
+  width: 207px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 7px;
+  height: 470px;
+  font-weight: 200;
+}
+
+.each-movie img{
+  width: 207px;
+  height: 310px;
+}
+
+.each-movie .info{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;   
+}
+
+
+
