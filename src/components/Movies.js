@@ -17,7 +17,7 @@ export default function Movie({movie}){
             <div className= "info">
             <p>{movieName}</p>
             <p>{date}</p>
-            <p>IMDB Rate: {rate}</p>
+            <p className="rate">IMDB Rate: {rate}</p>
             </div>
         </div>
     )
